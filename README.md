@@ -1,4 +1,6 @@
-这个脚手架工程模板用于快速启动基于React + Babel + Webpack为技术栈的前端项目
+# 基于React + Webpack + Babel的项目脚手架
+
+> 这个脚手架工程模板用于快速启动基于React + Babel + Webpack为技术栈的前端项目
 
 ## 技术栈使用情况
 
