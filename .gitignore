@@ -1,4 +1,7 @@
 
+# build resource
+build
+
 # Logs
 logs
 *.log
