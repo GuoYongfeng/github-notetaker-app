@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-require('./TestDemo.css');
+import './TestDemo.css';
 
 class TestDemo extends Component {
   render() {
     return (
-      <h1> this is a component </h1>
+      <h1 className="demo"> this is a component </h1>
     );
   }
 }

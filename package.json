@@ -5,7 +5,8 @@
   "main": "app/index.jsx",
   "scripts": {
     "dev": "webpack-dev-server --devtool eval --progress --hot --colors --content-base build",
-    "build": "webpack --progress --color --config webpack.prod.config.js"
+    "build": "npm run clean && webpack --progress --color --config webpack.prod.config.js",
+    "clean": "rm -rf build"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,8 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.10.0",
+    "less": "^2.6.1",
+    "less-loader": "^2.2.2",
     "open-browser-webpack-plugin": "0.0.2",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.0",

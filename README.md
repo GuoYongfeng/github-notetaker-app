@@ -1,13 +1,19 @@
 # 基于React + Webpack + Babel的项目脚手架
 
-> 这个脚手架工程模板用于快速启动基于React + Babel + Webpack为技术栈的前端项目
+> 这个脚手架工程模板用于快速启动基于React + Webpack为技术栈的前端项目
 
-## 技术栈使用情况
+## 技术栈
 
-- react && react-dom
-- ES6
-- babel
-- webpack && webpack-dev-server
+- [x] [Webpack](https://webpack.github.io)
+- [x] [React](https://facebook.github.io/react/)
+- [x] [ES6](http://es6.ruanyifeng.com/)
+- [ ] [Redux](https://github.com/rackt/redux)
+- [ ] [React-router](https://github.com/rackt/react-router-redux)
+- [x] [Babel](https://babeljs.io/)
+- [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [ ] [PostCSS](https://github.com/postcss/postcss)
+- [ ] [Gulp](http://www.gulpjs.com.cn/docs/getting-started/)
+- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
 
 ## 使用方法
 
@@ -18,9 +24,9 @@ $ cd webpack-dev-boilerplate
 $ npm install
 ```
 
-### 启动
+### 开发调试
 ```
-$ npm start
+$ npm run dev
 ```
 
 查看效果` http://127.0.0.1:8080`
@@ -28,8 +34,4 @@ $ npm start
 ### 产出资源
 ```
 $ npm run build
-```
-### 部署
-```
-$ npm run deploy
 ```

@@ -18,7 +18,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: "[name].[hash:8].js",
+        filename: "[name].js",
         publicPath: '/'
     },
     resolve: {
@@ -27,14 +27,6 @@ module.exports = {
     },
     devtool: 'source-map',
     'display-error-details': true,
-    devServer: {
-      historyApiFallback: true,
-      hot: true,
-      inline: true,
-      progress: true,
-      contentBase: './build',
-      port: 8080
-    },
     module: {
       noParse: [],
       loaders: [
@@ -44,22 +36,37 @@ module.exports = {
           exclude: path.resolve(__dirname, 'node_modules')
         },
         {
-          test: /\.css$/,
+          test: /\.css/,
           include: path.resolve(__dirname, 'app'),
-          loader: 'style-loader!css-loader'
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         },
+        {
+          test: /\.less/,
+          include: path.resolve(__dirname, 'app'),
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+        },
+        {
+          test: /\.(png|jpg)$/,
+          include: path.resolve(__dirname, 'app'),
+          loader: 'url?limit=8192'
+        },
+        {
+          test: /\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+          include: path.resolve(__dirname, 'app'),
+          loader: "url?limit=10000"
+        }
       ]
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.[hash:8].js'),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new HtmlWebpackPlugin({
         title: 'zhufeng-react-tutorial',
         template: './app/index.html',
       }),
       new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
-      new ExtractTextPlugin("[name].[hash:8].css", {
+      new ExtractTextPlugin("main.css", {
           allChunks: true,
           disable: false
       }),
