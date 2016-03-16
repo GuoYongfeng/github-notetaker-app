@@ -23,12 +23,16 @@ module.exports = {
     },
     resolve: {
       extension: ['', '.jsx', '.js', '.json'],
-      alias: {}
+      alias: { }
     },
     devtool: 'source-map',
     'display-error-details': true,
+    externals: [],
     module: {
-      noParse: [],
+      // 配置这项，webpack 将不再扫描这个文件中的依赖，加快编译速度
+      noParse: [
+        
+      ],
       loaders: [
         {
           test: /\.js[x]?$/,
