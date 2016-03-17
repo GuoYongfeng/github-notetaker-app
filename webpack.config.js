@@ -7,6 +7,10 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 // 单独样式文件
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+var node_modules = path.resolve(__dirname, 'node_modules');
+var pathToReact = path.resolve(node_modules, 'react/dist/react.js');
+var pathToReactDOM = path.resolve(node_modules, 'react-dom/dist/react-dom.js');
+
 module.exports = {
     entry: {
       index: [
@@ -23,16 +27,16 @@ module.exports = {
     },
     resolve: {
       extension: ['', '.jsx', '.js', '.json'],
+      // 提高webpack搜索的速度
       alias: { }
     },
     devtool: 'source-map',
     'display-error-details': true,
+    // 使用externals可以将react分离，然后用<script>单独将react引入
     externals: [],
     module: {
-      // 配置这项，webpack 将不再扫描这个文件中的依赖，加快编译速度
-      noParse: [
-        
-      ],
+      // 使用module.noParse针对单独的react.min.js这类没有依赖的模块，速度会更快
+      noParse: [ pathToReact, pathToReactDOM ],
       loaders: [
         {
           test: /\.js[x]?$/,
@@ -66,7 +70,7 @@ module.exports = {
       new webpack.NoErrorsPlugin(),
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new HtmlWebpackPlugin({
-        title: 'zhufeng-react-tutorial',
+        title: 'your app title',
         template: './app/index.html',
       }),
       new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
