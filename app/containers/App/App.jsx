@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import { TestDemo } from '../../components';
+import React from 'react';
+// import SearchGithub from '../components/SearchGithub/SearchGithub'
 
-import './App.css';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <TestDemo />
-        <h1> content from container </h1>
+const App = ({children, history}) => {
+  return (
+    <div className="main-container">
+      <nav className="navbar navbar-default" role="navigation">
+        <div className="col-sm-7 col-sm-offset-2" style={{marginTop: 15}}>
+          {/* <SearchGithub history={history}/> */}
+        </div>
+      </nav>
+      <div className="container">
+        {children}
       </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default App;
+export default App
