@@ -1,6 +1,6 @@
 {
-  "name": "webpack-dev-boilerplate",
-  "version": "1.0.2",
+  "name": "github-notetaker-app",
+  "version": "1.0.4",
   "description": "boilerplate",
   "main": "app/index.jsx",
   "scripts": {
@@ -19,7 +19,7 @@
     "babel"
   ],
   "author": "guoyongfeng",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/GuoYongfeng/webpack-dev-boilerplate/issues"
   },
