@@ -32,22 +32,18 @@ module.exports = {
         },
         {
           test: /\.css/,
-          include: path.resolve(__dirname, 'app'),
           loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         },
         {
           test: /\.less/,
-          include: path.resolve(__dirname, 'app'),
           loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
         },
         {
           test: /\.(png|jpg)$/,
-          include: path.resolve(__dirname, 'app'),
           loader: 'url?limit=8192'
         },
         {
           test: /\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
-          include: path.resolve(__dirname, 'app'),
           loader: "url?limit=10000"
         }
       ]
