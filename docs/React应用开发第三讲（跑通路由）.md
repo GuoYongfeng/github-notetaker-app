@@ -110,7 +110,7 @@ export default Home;
 
 ```
 
-代码清单：`app/containers/Home/Home.jsx`
+代码清单：`app/containers/About/About.jsx`
 
 ```
 import React, { Component } from 'react';
